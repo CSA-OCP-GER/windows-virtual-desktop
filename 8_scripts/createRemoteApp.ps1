@@ -15,16 +15,16 @@ Get-RdsStartMenuApp [-TenantName] <String> [-HostPoolName] <String> [-AppGroupNa
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -AppAlias <appalias>
 
     ### Sample IE
-    New-RdsRemoteApp jnowvd myPoolno "Remote Apps" -Name "Internet Explorer" -AppAlias internetexplorer
+    New-RdsRemoteApp <mytenant> <mypool> "Remote Apps" -Name "Internet Explorer" -AppAlias internetexplorer
 
     ### Sample Paint
-    New-RdsRemoteApp jnowvd myPoolno "Remote Apps" -Name "Paint" -AppAlias paint
+    New-RdsRemoteApp <mytenant> <mypool> "Remote Apps" -Name "Paint" -AppAlias paint
 
 ## Publish based on Filepath
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -Filepath <filepath>  -IconPath <iconpath> -IconIndex <iconindex>
 
     ### Sample visual studio (if installed on machine)
-    New-RdsRemoteApp jnowvd myPoolno "Remote Apps" -Name "VS2017" -Filepath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe"  -IconPath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -IconIndex 1
+    New-RdsRemoteApp <mytenant> <mypool> "Remote Apps" -Name "VS2017" -Filepath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe"  -IconPath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -IconIndex 1
 
 ## Give User Access to the new Group
 Add-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname> -UserPrincipalName <userupn>
