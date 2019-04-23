@@ -65,3 +65,23 @@ $svcPrincipalCreds.Value
 ```
 
 All other steps can be done as described in the Microsoft Docs, except the deployment credentials. In the step [Windows Virtual Desktop Preview tenant information](https://docs.microsoft.com/de-de/azure/virtual-desktop/create-host-pools-azure-marketplace#windows-virtual-desktop-preview-tenant-information) use the service principal instead of user credentials.
+
+## Test the access to the session hosts
+
+As far as this sample is based on having no synchronization between Azure AD and "hostpool AD" - you should use the Web portal of the WVD service to access the RDP session. The URL is at the moment:
+
+https://rdweb.wvd.microsoft.com/webclient/index.html
+
+After login with Azure AD credentials of a user having the right permissions assigned: 
+
+![Websession using WVD](../9_images/websession.png)
+
+After starting the connection and select the options (printer, clipboard) you will be prompted for the credentials:
+
+![Websession login dialog](../9_images/websession-login.png)
+
+Starting the Session Desktop the user will be connected to the session host via the browser:
+
+![Websession with user logged in](../9_images/websession-rdp.png)
+
+Please note that in the current status of the preview version only the way over the web session allows to change the username during the log in on the session host.
