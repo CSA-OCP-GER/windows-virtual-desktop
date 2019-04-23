@@ -1,0 +1,45 @@
+rgname = "<your Ressource Group>"
+admname = "<your admin>"
+admpwd ="<you admin password>"
+vmdc = "<your dc name>"
+wvdvnet = "<your vnet name>"
+
+
+## Login
+az login
+
+
+## New resource group
+az group --name $rgname --location westeuropa
+
+## New network with first subnet
+az network vnet create --resource-group $rgname --name $wvdvnet --address-prefixes 10.11.0.0/16 --subnet-name backend --subnet-prefixes 10.11.2.0/24 --location westeurope
+
+## The client subnet
+az network vnet subnet create --resource-group $rgname --vnet-name $wvdvnet --name clients --address-prefixes 10.11.3.0/24
+
+
+## check 
+az network vnet list --resource-group $rgname   
+
+## to check the possible image types
+az vm image list --offer WindowsServer --sku 2019-Datacenter --all --output table
+
+## New DC Vm in Backend as a Server Core
+az vm create --name $vmdc --resource-group $rgname --location westeurope --admin-username $admname --admin-password $admpwd --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter-Core:latest --size Standard_DS2_v2  --vnet-name $wvdvnet --subnet backend
+
+## open RDP Port on VM
+az vm open-port -g $rgname -n 
+$vmdc --port 3389
+
+## login into the new DC-VM using mstsc...
+see PowerShell Script under \8_scripts\DeployDCServerCore.ps1
+
+## deploy the windows server management client
+az vm create --name wdvmgmtclient01 -g $rgname --location westeurope --admin-username $admname --admin-password $admpwd --image MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest --size Standard_DS2_v2 --vnet-name $wvdvent --subnet clients
+
+## change the dns for the vnet for domain join
+az network vnet update --name $wvdvnet -g $rgname --dns-servers 10.11.2.4 168.63.129.16
+
+## connect to the vm at ipconfig /renew
+## join to the domain
