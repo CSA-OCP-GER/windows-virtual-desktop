@@ -23,8 +23,5 @@ New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname
 ## Publish based on Filepath
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -Filepath <filepath>  -IconPath <iconpath> -IconIndex <iconindex>
 
-    ### Sample visual studio (if installed on machine)
-    New-RdsRemoteApp <mytenant> <mypool> "Remote Apps" -Name "VS2017" -Filepath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe"  -IconPath "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" -IconIndex 1
-
 ## Give User Access to the new Group
 Add-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname> -UserPrincipalName <userupn>
