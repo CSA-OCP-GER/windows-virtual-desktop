@@ -86,4 +86,4 @@ To manage the Active Directory and to ensure that everything works in the enviro
 22. In preparation for the further deployment of the Windows Virtual Desktop Service it would be helpful to already have a special OU in the AD for the clients in the host pool. In this sample an OU __WVDDemo__ is deploy with __Clients__ and __User__ as folders. 
     ![additional OU for the demo](../9_images/new-ad-ou.png)
 
-[Back to the main page](../readme.md)
+[Back to the main page](https://github.com/CSA-OCP-GER/windows-virtual-desktop/)
