@@ -85,3 +85,6 @@ Starting the Session Desktop the user will be connected to the session host via 
 ![Websession with user logged in](../9_images/websession-rdp.png)
 
 Please note that in the current status of the preview version only the way over the web session allows to change the username during the log in on the session host.
+
+
+[Back to the main page](https://github.com/CSA-OCP-GER/windows-virtual-desktop/)
