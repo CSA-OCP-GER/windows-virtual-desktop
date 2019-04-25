@@ -1,4 +1,4 @@
-# Collection of Topics out of our Workshops
+# Collection of topics out of our workshops
 
 ## 1. How does Scaling work for the WVD host pool?
 
