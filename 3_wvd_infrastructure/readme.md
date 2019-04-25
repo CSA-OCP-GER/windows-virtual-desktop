@@ -40,6 +40,7 @@ Next Step will be to create the service principal
 
 ```PowerShell
 Import-Module AzureAD
+Import-Module -Name Microsoft.RDInfra.RDPowerShell
 
 $aadContext = Connect-AzureAD
 
