@@ -10,7 +10,7 @@ Prductpage|https://azure.microsoft.com/de-de/services/virtual-desktop/
 Docs|https://docs.microsoft.com/de-de/azure/virtual-desktop/overview
 
 
-## Inhalt
+## Content
 
 The workshop has three main part
 1. Introduction to the service
@@ -74,4 +74,6 @@ Deploy the needed components to have a first Host Pool in the client subnet and 
 
 ---
 
+## Questions
 
+[please lock under the FAQ section](7_faq/readme.md)

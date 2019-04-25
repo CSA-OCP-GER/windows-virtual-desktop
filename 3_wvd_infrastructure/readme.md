@@ -11,8 +11,12 @@ All these steps are descripted in the Microsoft Docs - so please follow the step
 
 ## Create a tenant in Windows Virtual Desktop
 
+Please follow the Guide in the docs and check the "important to know" section before you start doing anything in the your demo environment.
+
 [Step by step guide Microsoft Docs](https://docs.microsoft.com/de-de/azure/virtual-desktop/tenant-setup-azure-active-directory)
 
+
+## Please __read__ before doing the step by step guide
 Important to know - you will need the Directory ID of the Azure AD to which the WVD Service should be registered. You will find the ID in the Azure Portal (see screenshot):
 
 ![Directory ID](../9_images/directory-id.png)
