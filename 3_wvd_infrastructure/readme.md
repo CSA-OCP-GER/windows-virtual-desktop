@@ -7,7 +7,9 @@ The process of deploy a WVD infrastructure is divided in to the following steps:
 3. Grant User rights to the default Desktop Application group  
 
 ```
-Please be aware that you will need information from the PowerShell responses of some commands (e.g. Tenant Group name, Tenant Name,...) - best practice could be to copy the outputs in any kind of documentation  
+Please be aware that you will need information from the PowerShell
+ responses of some commands (e.g. Tenant Group name, Tenant Name,...) - 
+ best practice could be to copy the outputs in any kind of documentation  
 ```
 
 ## Create a tenant in the WVD Service
