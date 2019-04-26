@@ -11,22 +11,35 @@ All these steps are descripted in the Microsoft Docs - so please follow the step
 
 ## Create a tenant in Windows Virtual Desktop
 
-Please follow the Guide in the docs and check the "important to know" section before you start doing anything in the your demo environment.
+The process of deploy a WVD infrastructure is divided in to the following steps:
 
-[Step by step guide Microsoft Docs](https://docs.microsoft.com/de-de/azure/virtual-desktop/tenant-setup-azure-active-directory)
+1. Create a tenant in the WVD service 
+2. Create a first host pool 
+3. Grant User rights to the default Desktop Application group  
 
+```
+Please be aware that you will need information from the PowerShell responses of some commands (e.g. Tenant Group name, Tenant Name,...) - best practice could be to copy the outputs in any kind of documentation  
+```
 
-## Please __read__ before doing the step by step guide
+## Create a tenant in the WVD Service
+
+### Azure Active Directory ID ###
+
 Important to know - you will need the Directory ID of the Azure AD to which the WVD Service should be registered. You will find the ID in the Azure Portal (see screenshot):
 
 ![Directory ID](../9_images/directory-id.png)
+
 
 
 With the Directory ID in "mind" better in the clipboard, it is possible to register the server and client app for the Virtual Desktop Service under https://rdweb.wvd.microsoft.com/.
 
 The next Step in the Doc is to assign special rights to the AAD User who will be the WVD AAD Admin. The WVD Admin do not need to have Enterprise Admin rights. 
 
-## Create a host pool with Azure Marketplace
+Detailed steps are provided in the docs:
+
+[Step by step guide Microsoft Docs to create a WDV Tenant](https://docs.microsoft.com/de-de/azure/virtual-desktop/tenant-setup-azure-active-directory)
+
+## Create the first host pool with Azure Marketplace
 
 Before deploying the first host pool to the infrastructure there is one important fact to consider. As long as no directory synchronization is in place between the on prem AD (even if it is deploy in Azure) and the AAD, the only way to deploy the Host pool is to use a service principal for deployment (see https://docs.microsoft.com/de-de/azure/virtual-desktop/create-service-principal-role-PowerShell).
 
@@ -71,9 +84,21 @@ $svcPrincipalCreds.Value
 
 All other steps can be done as described in the Microsoft Docs, except the deployment credentials. In the step [Windows Virtual Desktop Preview tenant information](https://docs.microsoft.com/de-de/azure/virtual-desktop/create-host-pools-azure-marketplace#windows-virtual-desktop-preview-tenant-information) use the service principal instead of user credentials.
 
+## Grant the User access to the host pool
+
+If not already done in the step above, you must now grant the user access to the default Desktop application group by using the following PowerShell commands:
+
+```PowerShell
+## Login to the WDV service
+Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
+
+## Set the User permission
+Add-RdsAppGroupUser <tenantname> <hostpoolname> "Desktop Application Group" -UserPrincipalName <userupn>
+```
+
 ## Test the access to the session hosts
 
-As far as this sample is based on having no synchronization between Azure AD and "hostpool AD" - you should use the Web portal of the WVD service to access the RDP session. The URL is at the moment:
+As far as this sample is based on having no synchronization between Azure AD and "host pool AD" - you should use the Web portal of the WVD service to access the RDP session. The URL is at the moment:
 
 https://rdweb.wvd.microsoft.com/webclient/index.html
 
