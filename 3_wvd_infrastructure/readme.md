@@ -1,16 +1,5 @@
 # Build the Windows Virtual Desktop (WVD) infrastructure
 
-To integration WVD in the own Azure infrastructure there a some steps to do:
-
-    - Create a tenant in Windows Virtual Desktop
-    - Create a host pool with Azure Marketplace
-    - Manage app groups for Windows Virtual Desktop Preview
-
-
-All these steps are descripted in the Microsoft Docs - so please follow the steps in the Docs.
-
-## Create a tenant in Windows Virtual Desktop
-
 The process of deploy a WVD infrastructure is divided in to the following steps:
 
 1. Create a tenant in the WVD service 
