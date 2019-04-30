@@ -6,7 +6,7 @@ Oneday workshop to have a first view on the service and hands on with the public
 
 Inhalt|URL
 ----|-----|
-Prductpage|https://azure.microsoft.com/de-de/services/virtual-desktop/
+Productpage|https://azure.microsoft.com/de-de/services/virtual-desktop/
 Docs|https://docs.microsoft.com/de-de/azure/virtual-desktop/overview
 
 
