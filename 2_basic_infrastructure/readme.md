@@ -71,7 +71,7 @@ To manage the Active Directory and to ensure that everything works in the enviro
 
 16. Deploy a VM - depending on the subscription being uses, different kind of images are available. In this demo a Windows 10 Image was used to deploy the management client  
     ![validation client deployment](../9_images/new-vm-client-validation.png)
-17.  After the client is deployed it could be interesting to check the dns name resolution in your network. Fist step - check whether the domain controller is able to resolve DNS request. Connect via RDP to your DC and check with e.g. __nslockup__ the external DNS resolution  
+17.  After the client is deployed it could be interesting to check the dns name resolution in your network. First step - check whether the domain controller is able to resolve DNS request. Connect via RDP to your DC and check with e.g. __nslookup__ the external DNS resolution  
     ![check dns resolution extern](../9_images/check-dns-extern.png)  
 18. Get the Azure DNS Server IP to configure the vNet for DNS - the fastest way if you not already know the IP is to connect to client and get the ipconfig __ipconfig /all__ an check the provided DNS information
     ![check the Azure DNS server](../9_images/check-dns-extern.png)  
