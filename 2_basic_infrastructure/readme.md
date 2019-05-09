@@ -36,11 +36,11 @@ To demo purpose no Network Security Group, Routing Table or other configuration 
 
 As mentioned before we need a Active Directory in the network where the client will be deployed. So we have to deploy a domain controller into our Backend Subnet in the next steps. To make as simple as possible this documentation deploys a domain controller based on a serve core image and a client to manage the domain in the Client Subnet. Feel free to deploy a full server or any other edition. 
 
-8. Deploy the server core VM for the domain controller by clicking on the __Create a resource__ in the Azure portal   
-   ![create new ressource](../9_images/create-new.png)
+8. Deploy the server core VM for the domain controller by clicking on the __Create a resource__ in the Azure portal
+   ![create new resource](../9_images/create-new.png)
 9. Search for the Windows Server in the Marketplace and select __Windows Server__
     ![new windows server](../9_images/new-windows-server.png)
-10. Select the __Server Image__ you want to use - in this sample the Windows Server 2019 datacenter server core 
+10. Select the __Server Image__ you want to use - in this sample the Windows Server 2019 datacenter server core
     ![server image selection](../9_images/new-server-image-selection.png)
 11. After clicking on __Create__ you get the dialog for a new VM in Azure  
     Here it is important to bring the VM in the Backend Subnet and expose the VM with an Public IP to the internet. Keep in mind that you have to open the RDP port for the connection and remember your local Admin password for the connection.
